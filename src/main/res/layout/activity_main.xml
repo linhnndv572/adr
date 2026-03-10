@@ -1,647 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_gradient"
-    android:fillViewport="true"
-    android:clipToPadding="false">
+    android:orientation="vertical"
+    android:background="@drawable/bg_gradient">
 
+    <!-- ========== HEADER ========== -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:paddingTop="48dp"
-        android:paddingBottom="24dp">
+        android:paddingBottom="12dp">
 
-        <!-- ========== HEADER ========== -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Summer Drinks"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Giải khát mùa hè tươi mát"
-                    android:textSize="14sp"
-                    android:textColor="#E0F7FA"
-                    android:layout_marginTop="4dp"/>
-
-            </LinearLayout>
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="☀️"
-                android:textSize="40sp"/>
+                android:text="Summer Drinks"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qu&#7843;n l&#253; th&#7913;c u&#7889;ng"
+                android:textSize="14sp"
+                android:textColor="#E0F7FA"
+                android:layout_marginTop="4dp"/>
 
         </LinearLayout>
 
-        <!-- ========== SEARCH BAR ========== -->
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Tìm kiếm thức uống..."
-            android:background="@drawable/bg_input"
-            android:padding="14dp"
-            android:textColor="#023E8A"
-            android:textColorHint="#800077B6"
-            android:textSize="14sp"
-            android:layout_marginTop="20dp"
-            android:maxLines="1"
-            android:inputType="text"/>
-
-        <!-- ========== CATEGORY CHIPS ========== -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:scrollbars="none"
-            android:clipToPadding="false">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tất cả"
-                    android:background="@drawable/bg_chip_active"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:paddingStart="18dp"
-                    android:paddingEnd="18dp"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Trà"
-                    android:background="@drawable/bg_chip"
-                    android:textColor="#023E8A"
-                    android:textSize="13sp"
-                    android:paddingStart="18dp"
-                    android:paddingEnd="18dp"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:layout_marginStart="8dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sinh tố"
-                    android:background="@drawable/bg_chip"
-                    android:textColor="#023E8A"
-                    android:textSize="13sp"
-                    android:paddingStart="18dp"
-                    android:paddingEnd="18dp"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:layout_marginStart="8dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nước ép"
-                    android:background="@drawable/bg_chip"
-                    android:textColor="#023E8A"
-                    android:textSize="13sp"
-                    android:paddingStart="18dp"
-                    android:paddingEnd="18dp"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:layout_marginStart="8dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Đá xay"
-                    android:background="@drawable/bg_chip"
-                    android:textColor="#023E8A"
-                    android:textSize="13sp"
-                    android:paddingStart="18dp"
-                    android:paddingEnd="18dp"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:layout_marginStart="8dp"/>
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <!-- ========== FEATURED SECTION ========== -->
         <TextView
+            android:id="@+id/btn_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nổi bật"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="24dp"/>
-
-        <!-- Featured Drink Card -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/bg_featured_card"
-            android:padding="20dp"
-            android:gravity="center_vertical"
-            android:layout_marginTop="12dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Trà Đào Cam Sả"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hương vị trà thơm ngát kết hợp đào tươi, cam vàng và sả chanh"
-                    android:textSize="12sp"
-                    android:textColor="#B3E0F7FA"
-                    android:layout_marginTop="6dp"
-                    android:lineSpacingExtra="2dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="45.000đ"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="#FFD166"/>
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Đặt ngay"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:textColor="#0077B6"
-                        android:background="@drawable/btn_white"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🍑"
-                android:textSize="52sp"
-                android:layout_marginStart="12dp"/>
-
-        </LinearLayout>
-
-        <!-- ========== MENU SECTION ========== -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Thực đơn mùa hè"
-            android:textSize="20sp"
+            android:text="&#272;&#259;ng xu&#7845;t"
+            android:textSize="13sp"
             android:textStyle="bold"
             android:textColor="#023E8A"
-            android:layout_marginTop="28dp"/>
-
-        <!-- ===== Row 1 ===== -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp">
-
-            <!-- Drink 1: Mojito Chanh -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="@drawable/bg_drink_card"
-                android:padding="16dp"
-                android:gravity="center_horizontal">
-
-                <FrameLayout
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/bg_icon_circle">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="🍹"
-                        android:textSize="28sp"
-                        android:gravity="center"/>
-
-                </FrameLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mojito Chanh"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="#023E8A"
-                    android:layout_marginTop="10dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bạc hà &amp; chanh tươi"
-                    android:textSize="11sp"
-                    android:textColor="#5E81AC"
-                    android:layout_marginTop="2dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="39.000đ"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="#0077B6"
-                    android:layout_marginTop="8dp"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="12dp"
-                android:layout_height="0dp"/>
-
-            <!-- Drink 2: Sinh Tố Xoài -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="@drawable/bg_drink_card"
-                android:padding="16dp"
-                android:gravity="center_horizontal">
-
-                <FrameLayout
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/bg_icon_circle">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="🍊"
-                        android:textSize="28sp"
-                        android:gravity="center"/>
-
-                </FrameLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sinh Tố Xoài"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="#023E8A"
-                    android:layout_marginTop="10dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Xoài chín mọng ngọt"
-                    android:textSize="11sp"
-                    android:textColor="#5E81AC"
-                    android:layout_marginTop="2dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="35.000đ"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="#0077B6"
-                    android:layout_marginTop="8dp"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- ===== Row 2 ===== -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp">
-
-            <!-- Drink 3: Nước Dừa Tươi -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="@drawable/bg_drink_card"
-                android:padding="16dp"
-                android:gravity="center_horizontal">
-
-                <FrameLayout
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/bg_icon_circle">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="🌴"
-                        android:textSize="28sp"
-                        android:gravity="center"/>
-
-                </FrameLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nước Dừa Tươi"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="#023E8A"
-                    android:layout_marginTop="10dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Dừa non mát lạnh"
-                    android:textSize="11sp"
-                    android:textColor="#5E81AC"
-                    android:layout_marginTop="2dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="30.000đ"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="#0077B6"
-                    android:layout_marginTop="8dp"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="12dp"
-                android:layout_height="0dp"/>
-
-            <!-- Drink 4: Nước Ép Dưa Hấu -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="@drawable/bg_drink_card"
-                android:padding="16dp"
-                android:gravity="center_horizontal">
-
-                <FrameLayout
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/bg_icon_circle">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="🍉"
-                        android:textSize="28sp"
-                        android:gravity="center"/>
-
-                </FrameLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nước Ép Dưa Hấu"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="#023E8A"
-                    android:layout_marginTop="10dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Dưa hấu đỏ tươi"
-                    android:textSize="11sp"
-                    android:textColor="#5E81AC"
-                    android:layout_marginTop="2dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="32.000đ"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="#0077B6"
-                    android:layout_marginTop="8dp"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- ===== Row 3 ===== -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="12dp">
-
-            <!-- Drink 5: Trà Chanh Mật Ong -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="@drawable/bg_drink_card"
-                android:padding="16dp"
-                android:gravity="center_horizontal">
-
-                <FrameLayout
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/bg_icon_circle">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="🍋"
-                        android:textSize="28sp"
-                        android:gravity="center"/>
-
-                </FrameLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Trà Chanh Mật Ong"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="#023E8A"
-                    android:layout_marginTop="10dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Chanh tươi &amp; mật ong"
-                    android:textSize="11sp"
-                    android:textColor="#5E81AC"
-                    android:layout_marginTop="2dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="35.000đ"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="#0077B6"
-                    android:layout_marginTop="8dp"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="12dp"
-                android:layout_height="0dp"/>
-
-            <!-- Drink 6: Soda Chanh Dây -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="@drawable/bg_drink_card"
-                android:padding="16dp"
-                android:gravity="center_horizontal">
-
-                <FrameLayout
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/bg_icon_circle">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="🍹"
-                        android:textSize="28sp"
-                        android:gravity="center"/>
-
-                </FrameLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Soda Chanh Dây"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="#023E8A"
-                    android:layout_marginTop="10dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Soda tươi mát sảng khoái"
-                    android:textSize="11sp"
-                    android:textColor="#5E81AC"
-                    android:layout_marginTop="2dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="42.000đ"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="#0077B6"
-                    android:layout_marginTop="8dp"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- ========== SPECIAL OFFER BANNER ========== -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/bg_banner"
-            android:padding="20dp"
-            android:gravity="center_vertical"
-            android:layout_marginTop="24dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ưu đãi mùa hè!"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#023E8A"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Giảm 20% cho đơn hàng đầu tiên"
-                    android:textSize="13sp"
-                    android:textColor="#80023E8A"
-                    android:layout_marginTop="4dp"/>
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🎉"
-                android:textSize="36sp"/>
-
-        </LinearLayout>
-
-        <!-- Bottom spacing -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="24dp"/>
+            android:background="@drawable/btn_white"
+            android:padding="10dp"/>
 
     </LinearLayout>
 
-</ScrollView>
+    <!-- ========== SEARCH BAR ========== -->
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="T&#236;m ki&#7871;m th&#7913;c u&#7889;ng..."
+        android:background="@drawable/bg_input"
+        android:padding="14dp"
+        android:textColor="#023E8A"
+        android:textColorHint="#800077B6"
+        android:textSize="14sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:maxLines="1"
+        android:inputType="text"/>
+
+    <!-- ========== ADD BUTTON ========== -->
+    <Button
+        android:id="@+id/btn_add_drink"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="+ Th&#234;m &#273;&#7891; u&#7889;ng m&#7899;i"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#023E8A"
+        android:background="@drawable/btn_gradient_yellow"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="12dp"
+        android:stateListAnimator="@null"/>
+
+    <!-- ========== DRINK LIST ========== -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Danh s&#225;ch &#273;&#7891; u&#7889;ng"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_drinks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:clipToPadding="false"/>
+
+</LinearLayout>

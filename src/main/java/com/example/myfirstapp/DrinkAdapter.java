@@ -17,6 +17,7 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkAdapter.DrinkViewHol
     private OnDrinkClickListener listener;
 
     public interface OnDrinkClickListener {
+        void onItemClick(Drink drink);
         void onEditClick(Drink drink);
         void onDeleteClick(Drink drink);
     }
@@ -47,6 +48,7 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkAdapter.DrinkViewHol
         holder.tvPrice.setText(drink.getPrice());
         holder.tvCategory.setText(drink.getCategory());
 
+        holder.itemView.setOnClickListener(v -> listener.onItemClick(drink));
         holder.btnEdit.setOnClickListener(v -> listener.onEditClick(drink));
         holder.btnDelete.setOnClickListener(v -> listener.onDeleteClick(drink));
     }

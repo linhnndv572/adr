@@ -29,6 +29,8 @@
 
         <activity android:name=".AddEditDrinkActivity" />
 
+        <activity android:name=".DrinkDetailActivity" />
+
     </application>
 
 </manifest>

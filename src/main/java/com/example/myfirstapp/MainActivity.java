@@ -115,6 +115,18 @@ public class MainActivity extends AppCompatActivity implements DrinkAdapter.OnDr
     }
 
     @Override
+    public void onItemClick(Drink drink) {
+        Intent intent = new Intent(this, DrinkDetailActivity.class);
+        intent.putExtra("drink_id", drink.getId());
+        intent.putExtra("drink_name", drink.getName());
+        intent.putExtra("drink_desc", drink.getDescription());
+        intent.putExtra("drink_price", drink.getPrice());
+        intent.putExtra("drink_emoji", drink.getEmoji());
+        intent.putExtra("drink_category", drink.getCategory());
+        startActivity(intent);
+    }
+
+    @Override
     public void onEditClick(Drink drink) {
         Intent intent = new Intent(this, AddEditDrinkActivity.class);
         intent.putExtra("drink_id", drink.getId());
